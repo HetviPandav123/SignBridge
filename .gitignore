@@ -1,3 +1,14 @@
 version https://git-lfs.github.com/spec/v1
 oid sha256:c2480eb1c6cf2f9dd28216e88c0961567b49e0a8eed608042191ae78106bed57
 size 143
+.venv/
+__pycache__/
+*.pyc/
+.isl/
+*.mp4
+build/
+dist/
+vit_experiment/
+dataset_processed/
+dataset_sequences/
+dataset/ISL_CSLRT_Corpus/
