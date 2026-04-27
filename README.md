@@ -1,7 +1,7 @@
 ---
 
 
-🧏‍♀️ ##SignBridge — Indian Sign Language Smart Communication System##
+🧏‍♀️ ## SignBridge — Indian Sign Language Smart Communication System
 
 
 ---
