@@ -62,27 +62,6 @@ SignBridge is a real-time Indian Sign Language (ISL) to Text communication syste
 
 ---
 
-## 📂 Project Structure
-
-sign-language-smart-communication/
-│
-├── app.py
-├── templates/
-│   └── index.html
-├── static/
-│   └── assets/
-│
-├── isl_alphabet_model.pkl
-├── dynamic_sign_model.onnx
-│
-├── dist/
-│   └── SignBridge.exe
-│
-├── .gitattributes
-├── .gitignore
-├── README.md
-
----
 
 ## 🖥️ User Interface
 
