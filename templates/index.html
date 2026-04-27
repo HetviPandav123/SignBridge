@@ -1,3 +1,84 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:12c745ff93ec118574811d4cbf5abd3e817b48462d59ca6fbf39a0009a967487
-size 3799
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Bridge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- SocketIO -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="main-container">
+        <!-- Header -->
+        <header>
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='images/logo_v2.jpg') }}" alt="Sign Bridge Logo" class="logo">
+                <h1>An ISL smart tool - SignBridge</h1>
+            </div>
+            <p class="status">System Active</p>
+        </header>
+
+        <!-- Content Grid -->
+        <div class="content-grid">
+            <!-- Left: Video Area -->
+            <div class="video-section">
+                <div class="video-container">
+                    <img src="{{ url_for('video_feed') }}" alt="Live Feed" class="video-feed">
+                    <div class="overlay-sign">
+                        <span id="detecting-sign">Detecting...</span>
+                        <span id="current-sign" style="display: none;"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Controls -->
+            <div class="control-panel">
+                <!-- Buttons (Top) -->
+                <div class="button-group">
+                    <button onclick="speakText()" class="btn primary">🔊 Speak</button>
+                    <button onclick="sendCommand('backspace')" class="btn secondary">⌫ Backspace</button>
+                    <button onclick="sendCommand('clear')" class="btn danger">✖ Clear</button>
+                </div>
+
+                <!-- Sentence Builder (Bottom) -->
+                <div class="sentence-box">
+                    <div class="box-header">
+                        <label>Constructed Sentence</label>
+                        <div class="header-controls">
+                            <select id="lang-select" onchange="changeLanguage()" class="lang-select">
+                                <option value="en">English</option>
+                                <option value="hi">Hindi (हिंदी)</option>
+                            </select>
+                            <button onclick="copyToClipboard()" class="btn-icon" title="Copy to Clipboard">📋</button>
+                        </div>
+                    </div>
+                    <div id="sentence-display" class="sentence-text"></div>
+                    <div id="suggestions" class="suggestions"></div>
+                </div>
+
+                <!-- Incoming Speech (Bottom) -->
+                <div class="speech-box">
+                    <div class="speech-header">
+                        <label>Incoming Speech</label>
+                        <div class="header-controls">
+                            <button id="mic-btn" onclick="toggleSpeech()" class="mic-btn">Microphone Off</button>
+                            <button onclick="copySpeechToClipboard()" class="btn-icon" title="Copy Speech">📋</button>
+                        </div>
+                    </div>
+                    <div id="speech-display" class="speech-text"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
