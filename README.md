@@ -1,13 +1,13 @@
 ---
 
 
-🧏‍♀️ ## SignBridge — Indian Sign Language Smart Communication System
+## 🧏‍♀️ SignBridge — Indian Sign Language Smart Communication System
 
 
 ---
 SignBridge is a real-time Indian Sign Language (ISL) to Text communication system that converts static and dynamic hand gestures into readable sentences, with live translation support, using Computer Vision + Machine Learning.
 
-🎯 Project Features
+## 🎯 Project Features
 ✅ Works as a single-click executable (SignBridge.exe)
 🖐️ Real-time hand tracking using MediaPipe
 🔤 Static ISL alphabet recognition (A–Z)
@@ -19,7 +19,7 @@ SignBridge is a real-time Indian Sign Language (ISL) to Text communication syste
 🔄 Real-time frontend updates using Socket.IO
 ⚡ Optimized for performance & deployment (PyInstaller-ready)
 
-🧠 How the System Works (Core Logic)
+## 🧠 How the System Works (Core Logic)
 
 Motion-Based Intelligence
 Low motion (stable hand) → Static sign detection (letters)
@@ -32,30 +32,29 @@ Inserts spaces intelligently
 Supports clearing & backspacing
 Refines output into readable sentences
 
-🕶️ Smart Glasses Prototype (Basic Version)
+## 🕶️ Smart Glasses Prototype (Basic Version)
 
 
 https://github.com/user-attachments/assets/a26603fc-08d6-4ab4-ac14-63908bd6c44b
 
-
-
-
 To extend SignBridge beyond a software system, a basic prototype of smart glasses was implemented.
 
-🔧 Prototype Setup
+## 🔧 Prototype Setup
 External webcam mounted to simulate camera input
 Headphones used for:
 Speaker (audio output)
 Microphone (future voice interaction support)
 Connected to the system running SignBridge
-⚙️ Working
+
+## ⚙️ Working
 Webcam captures real-time hand gestures
 SignBridge processes gestures → converts to text
 Output is converted into speech via headphones
 Simulates how future smart glasses will:
 Detect signs using built-in camera sensors
 Convert them into real-time speech for non-sign users
-🚀 Future Scope
+
+## 🚀 Future Scope
 Integration of embedded camera sensors
 Built-in mic + speaker inside glasses
 Fully portable, wearable communication device
@@ -63,52 +62,52 @@ Fully portable, wearable communication device
 
 To improve model accuracy and robustness, additional data was collected and the model was retrained.
 
-📸 New Data Collection (Different Angles)
+## 📸 New Data Collection (Different Angles)
 Data was re-collected with multiple hand orientations and angles
 Included variations such as:
 Slight rotations of hand
 Different distances from camera
 Lighting condition changes
 Helps the model generalize better in real-world scenarios
-🧾 Updated Dataset
+## 🧾 Updated Dataset
 New samples appended to existing dataset (data.csv)
 Maintained same 126 landmark feature format
 Balanced dataset across all alphabets
-🧠 Model Retraining
+## 🧠 Model Retraining
 Old + new dataset merged
 Model retrained using Scikit-learn
 Improved:
-Accuracy
-Stability in real-time detection
-Reduced misclassification for similar signs
-🛠️ Tech Stack
+  Accuracy
+  Stability in real-time detection
+  Reduced misclassification for similar signs
+
+
+## 🛠️ Tech Stack
 
 Core Technologies
-
-Python
-OpenCV
-MediaPipe
-NumPy, Pandas
-Scikit-learn
-TensorFlow / Keras (for dynamic signs)
-gTTS (Online Text-to-Speech)
-ONNX Runtime
+  Python
+  OpenCV
+  MediaPipe
+  NumPy, Pandas
+  Scikit-learn
+  TensorFlow / Keras (for dynamic signs)
+  gTTS (Online Text-to-Speech)
+  ONNX Runtime
 
 Backend
-
-Flask
-Flask-SocketIO (threading mode)
+  Flask
+  Flask-SocketIO (threading mode)
 
 Frontend
-
-HTML / CSS / JavaScript
-WebSockets for live updates
+  HTML / CSS / JavaScript
+  WebSockets for live updates
 
 Deployment
+  PyInstaller
+  Git LFS (for large .exe & model files)
 
-PyInstaller
-Git LFS (for large .exe & model files)
-📂 Project Structure
+## 📂 Project Structure
+
 sign-language-smart-communication/
 │
 ├── app.py                     # Main application (backend + ML logic)
@@ -126,37 +125,36 @@ sign-language-smart-communication/
 ├── .gitattributes             # Git LFS configuration
 ├── .gitignore
 ├── README.md
-🖥️ User Interface
+
+## 🖥️ User Interface
 Live camera feed
 Displays:
 Current detected sign
 Constructed sentence
 Translated sentence
-Runs automatically in browser at:
-http://127.0.0.1:5000
-Browser opens automatically when the app starts.
 
-✋ Static Sign Recognition (A–Z)
+
+## ✋ Static Sign Recognition (A–Z)
 Dataset
-Each alphabet (A–Z) has its own folder
-Data stored as data.csv
-Each row contains 126 features (21 landmarks × 3 × 2 hands)
+  Each alphabet (A–Z) has its own folder
+  Data stored as data.csv
+  Each row contains 126 features (21 landmarks × 3 × 2 hands)
 Training
-All CSV files are merged
-Labels assigned per alphabet
-Model trained using Scikit-learn
+  All CSV files are merged
+  Labels assigned per alphabet
+  Model trained using Scikit-learn
 Saved as:
 isl_alphabet_model.pkl
 
 https://github.com/user-attachments/assets/71d4b8d2-443e-41b3-a5e7-9cc44beda388
 
-🎥 Dynamic Sign Recognition (Hello & Thank You)
+## 🎥 Dynamic Sign Recognition (Hello, Thank You etc.)
 Dataset Creation
-Short videos recorded for each word
-MediaPipe extracts landmarks per frame
-Each frame → 126 features
-Frames combined into fixed-length sequences
-Saved as .npy files
+  Short videos recorded for each word
+  MediaPipe extracts landmarks per frame
+  Each frame → 126 features
+  Frames combined into fixed-length sequences
+  Saved as .npy files
 
 Example shape:
 
@@ -171,19 +169,19 @@ dynamic_sign_model.pkl
 
 https://github.com/user-attachments/assets/52a8b8ed-b645-4b15-99c0-eb7084307ea5
 
-🔄 Real-Time Logic
+## 🔄 Real-Time Logic
 Low motion → Static model (letters)
 High motion → Dynamic model (words)
 Static letters form sentences
 Dynamic words are displayed/spoken directly
-🔊 Text-to-Speech
+## 🔊 Text-to-Speech
 Uses online Google Text-to-Speech (gTTS)
 Press S to speak the sentence
 Temporary audio files auto-deleted
 
 https://github.com/user-attachments/assets/0291d2be-7cc2-4521-8bce-1b288516b94a
 
-⌨️ Controls
+## ⌨️ Controls
 Key	Action
 q	Quit application
 s	Speak sentence
