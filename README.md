@@ -36,61 +36,6 @@ SignBridge is a real-time Indian Sign Language (ISL) to Text communication syste
 
 ---
 
-## 🕶️ Smart Glasses Prototype (Basic Version)
-
-https://github.com/user-attachments/assets/a26603fc-08d6-4ab4-ac14-63908bd6c44b
-
-To extend SignBridge beyond a software system, a **basic prototype of smart glasses** was implemented.
-
-### 🔧 Prototype Setup
-- External webcam mounted to simulate camera input
-- Headphones used for:
-  - Speaker (audio output)
-  - Microphone (future voice interaction support)
-- Connected to the system running SignBridge
-
-### ⚙️ Working
-- Webcam captures real-time hand gestures
-- SignBridge processes gestures → converts to text
-- Output is converted into speech via headphones
-- Simulates how future smart glasses will:
-  - Detect signs using built-in camera sensors
-  - Convert them into real-time speech for non-sign users
-
-### 🚀 Future Scope
-- Integration of embedded camera sensors
-- Built-in mic + speaker inside glasses
-- Fully portable, wearable communication device
-
----
-
-## 🔄 Data Enhancement & Model Improvement
-
-To improve model accuracy and robustness, additional data was collected and the model was retrained.
-
-### 📸 New Data Collection (Different Angles)
-- Data was re-collected with multiple hand orientations and angles
-- Included variations such as:
-  - Slight rotations of hand
-  - Different distances from camera
-  - Lighting condition changes
-- Helps the model generalize better in real-world scenarios
-
-### 🧾 Updated Dataset
-- New samples appended to existing dataset (data.csv)
-- Maintained same 126 landmark feature format
-- Balanced dataset across all alphabets
-
-### 🧠 Model Retraining
-- Old + new dataset merged
-- Model retrained using Scikit-learn
-- Improvements:
-  - Better accuracy
-  - More stable real-time detection
-  - Reduced misclassification for similar signs
-
----
-
 ## 🛠️ Tech Stack
 
 ### Core Technologies
@@ -244,7 +189,7 @@ This repository uses Git LFS for:
 ### Clone Properly
 
 git lfs install  
-git clone https://github.com/HetviPandav123/sign-language-smart-communication.git  
+git clone https://github.com/HetviPandav123/SignBridge.git  
 git lfs pull  
 
 ---
@@ -256,6 +201,61 @@ This system enables real-time ISL to speech translation, improving communication
 https://github.com/user-attachments/assets/2aa04f1a-f1bb-475b-97be-cfdde3c278d2
 
 ---
+## 🕶️ Smart Glasses Prototype (Basic Version)
+
+https://github.com/user-attachments/assets/a26603fc-08d6-4ab4-ac14-63908bd6c44b
+
+To extend SignBridge beyond a software system, a **basic prototype of smart glasses** was implemented.
+
+### 🔧 Prototype Setup
+- External webcam mounted to simulate camera input
+- Headphones used for:
+  - Speaker (audio output)
+  - Microphone (future voice interaction support)
+- Connected to the system running SignBridge
+
+### ⚙️ Working
+- Webcam captures real-time hand gestures
+- SignBridge processes gestures → converts to text
+- Output is converted into speech via headphones
+- Simulates how future smart glasses will:
+  - Detect signs using built-in camera sensors
+  - Convert them into real-time speech for non-sign users
+
+### 🚀 Future Scope
+- Integration of embedded camera sensors
+- Built-in mic + speaker inside glasses
+- Fully portable, wearable communication device
+
+---
+
+## 🔄 Data Enhancement & Model Improvement
+
+To improve model accuracy and robustness, additional data was collected and the model was retrained.
+
+### 📸 New Data Collection (Different Angles)
+- Data was re-collected with multiple hand orientations and angles
+- Included variations such as:
+  - Slight rotations of hand
+  - Different distances from camera
+  - Lighting condition changes
+- Helps the model generalize better in real-world scenarios
+
+### 🧾 Updated Dataset
+- New samples appended to existing dataset (data.csv)
+- Maintained same 126 landmark feature format
+- Balanced dataset across all alphabets
+
+### 🧠 Model Retraining
+- Old + new dataset merged
+- Model retrained using Scikit-learn
+- Improvements:
+  - Better accuracy
+  - More stable real-time detection
+  - Reduced misclassification for similar signs
+
+---
+
 
 ## 👩‍💻 Author
 
